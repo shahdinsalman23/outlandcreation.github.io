@@ -1,0 +1,2805 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900|Open+Sans:300,400,600,700");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("../css/bootstrap.css");
+@import url("../css/animate.css");
+@import url("../css/jquery.fancybox.min.css");
+@import url("../css/slick.css");
+@import url("../css/xicon.css");
+@import url("../css/variables.css");
+@import url("../css/mobile-nav.css");
+#jqcheck {
+    background: #fff9d7;
+    text-align: center;
+    color: #333;
+    padding: 10px 0px;
+    font-size: 13px;
+    font-weight: bold;
+    position: fixed;
+    z-index: 9991;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* text selection color */
+
+::-moz-selection {
+    background: var(--primary-color);
+    color: var(--theme-white);
+    text-shadow: none;
+}
+
+::selection {
+    background: var(--primary-color);
+    color: var(--theme-white);
+    text-shadow: none;
+}
+
+
+/* browser scroller style */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: none;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #ecedf1;
+    -webkit-border-radius: 0px;
+    border-left: 1px solid #888;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    -webkit-border-radius: 0px;
+    background: var(--primary-color);
+}
+
+body {
+    font-family: var(--base-font-family);
+    color: var(--default-color);
+    font-size: var(--base-font-size);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+
+/******* Header Section CSS Start ********/
+
+header.header-main {
+    padding: 24px 0px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    box-shadow: 0 0 3px #00000057;
+    background: white;
+}
+
+.header-logo img {
+    width: 200px;
+}
+
+.header-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    margin: 0;
+    gap: 20px;
+}
+
+.header-nav ul li {
+    list-style: none;
+}
+
+ul.dropdown_menu li:hover {
+    background: rgb(241, 88, 44);
+}
+
+ul.dropdown_menu li a {
+    color: white !important;
+}
+
+ul.dropdown_menu li a::before {
+    display: none;
+}
+
+ul.dropdown_menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    visibility: hidden;
+    opacity: 0;
+    width: 220px;
+    top: 30px;
+    background: #25292C;
+    box-shadow: 0 0 3px black;
+}
+
+.header-nav ul li.header-dropdown {
+    position: relative;
+}
+
+ul.dropdown_menu li {
+    background: #25292C;
+    display: block;
+    width: 100%;
+    padding: 15px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all .6s ease;
+}
+
+ul.dropdown_menu li a {
+    color: white !important;
+    font-family: Montserrat, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+.header-nav ul li.header-dropdown:hover ul.dropdown_menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.header-nav ul li a {
+    color: black;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+    text-transform: uppercase;
+    transition: all .6s ease;
+}
+
+.header-main .container {
+    max-width: 1290px;
+}
+
+.header-end {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.header-end a span {
+    color: black;
+    font-size: 20px;
+}
+
+.header-nav ul li:nth-child(10) a {
+    font-size: 20px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.header-nav ul li a::before {
+    position: absolute;
+    content: "";
+    background: #F56201;
+    height: 3px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 0%;
+    bottom: -25px;
+    border-radius: 50px;
+    transition: all .6s ease;
+}
+
+.header-nav ul li a:hover:before {
+    width: 100%;
+}
+
+.header-nav ul li a:hover {
+    text-decoration-line: none;
+}
+
+.header-nav ul li:nth-child(10) a::before {
+    display: none;
+}
+
+#search-box {
+    visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999999;
+}
+
+#search-box .container {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+#search-box .container .close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+}
+
+#search-box .container .close:hover {
+    opacity: 1;
+}
+
+#search-box .container .close:before,
+#search-box .container .close:after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 33px;
+    width: 2px;
+    background-color: white;
+}
+
+#search-box .container .close:after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 33px;
+    width: 2px;
+    background-color: white;
+}
+
+#search-box .container .close:before {
+    transform: rotate(45deg);
+}
+
+#search-box .container .close:after {
+    transform: rotate(-45deg);
+}
+
+#search-box .container .search-main {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#search-box .container .search-main .search-inner {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#search-box .container .search-main form {
+    position: relative;
+}
+
+#search-box .container .search-main input {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 12px 74px 12px 0;
+    font-size: 72px;
+    height: 84px;
+    border-bottom: 2px solid white;
+    display: block;
+    color: white;
+    margin-bottom: 0;
+    width: 100%;
+    transform: scale3d(0, 1, 1);
+    transform-origin: 0% 50%;
+    transition: transform 3s;
+}
+
+#search-box .container .search-main input:focus {
+    outline: none;
+}
+
+#search-box .container .search-main button {
+    border: 0;
+    left: auto;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0.3em;
+    bottom: 0.3em;
+    background: transparent;
+    font-size: 43px;
+}
+
+#search-box .container .search-main .search-info {
+    display: block;
+    color: white;
+    text-align: right;
+    float: right;
+    margin-top: 4px;
+}
+
+#search-box.-open {
+    background: rgba(0, 0, 0, 0.8);
+    visibility: visible;
+    animation: fadein 0.8s;
+}
+
+#search-box.-open .container .search-main input {
+    transform: scale3d(1, 1, 1);
+    transition-duration: 1s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/******* Header Section CSS End ********/
+
+
+/******* First Banner Section CSS Start ********/
+
+.first-banner-img img {
+    background-position: right;
+    background-size: cover;
+    width: 100%;
+}
+
+.first-banner-sec {
+    padding: 30px 0px 0px 0px;
+    background: #25292C;
+}
+
+.first-banner-img {
+    background: url(../images/blog-bannner.jpg);
+    overflow: hidden;
+    height: 760px;
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.first-banner-txt {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-banner-txt h4 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 1.4em;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.first-banner-txt p {
+    font-family: "Roboto", Sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: none;
+    font-style: normal;
+    line-height: 1.6em;
+    color: #fff;
+}
+
+.theme-btn {
+    background-color: #F1582C;
+    padding: 12px 24px;
+    color: #fff;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all .6s ease;
+}
+
+.first-banner-txt a:hover {
+    text-decoration-line: none;
+}
+
+.theme-btn:hover {
+    background: #232323;
+    color: white;
+    text-decoration-line: none;
+}
+
+
+/******* First Banner Section CSS End ********/
+
+
+/******* Great Idea Section CSS Start ********/
+
+.great-idea-txt h2 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.2em;
+    color: #25292C;
+}
+
+.great-idea-sec {
+    padding: 90px 0px 30px 0px;
+}
+
+.great-idea-txt {
+    text-align: center;
+}
+
+.great-idea-txt p {
+    line-height: 1.5;
+    font-weight: 300;
+    text-transform: none;
+    font-style: normal;
+    color: #000000;
+    font-family: "Roboto", Sans-serif;
+    font-size: 24px;
+}
+
+.lisensing-img img {
+    width: 100%;
+    height: 600px;
+}
+
+.licensing-sm-img img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 40px;
+}
+
+.licensing-sm-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.licensing-section.start {
+    padding: 60px 0px 60px 0px;
+}
+
+.licensing-img-2 img {
+    width: 100%;
+}
+
+.licensing-img-2 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lisensing-txt {
+    position: absolute;
+    left: 0;
+    top: 230px;
+    padding: 10px 20px;
+}
+
+.lisensing-txt h4 {
+    text-align: center;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.4em;
+    color: #FFFFFF;
+}
+
+.lisensing-img {
+    position: relative;
+}
+
+
+/******* Great Idea Section CSS End ********/
+
+
+/******* Service Section CSS Start ********/
+
+.services-txt {
+    text-align: center;
+    padding: 20px 20px;
+    border-right: 1px solid #0000001A;
+}
+
+.services-txt img {
+    width: 80px;
+    padding: 0px 0px 60px 0px;
+}
+
+.marketing-cloud-base {
+    padding: 50px 0px;
+}
+
+.services-txt h4 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4em;
+    color: black;
+}
+
+.services-txt p {
+    font-size: 16px;
+    font-family: 'Roboto';
+}
+
+.service-border {
+    border: none;
+}
+
+
+/******* Service Section CSS End ********/
+
+
+/******* Slider  Section CSS Start ********/
+
+.slider-img img {
+    width: 100%;
+}
+
+.slider-sec {
+    padding: 80px 0px 70px 0px;
+}
+
+.slider-images ul.slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px 0px 0px;
+    gap: 10px;
+}
+
+.slider-images ul.slick-dots li button {
+    color: transparent;
+    height: 8px;
+    width: 8px;
+    background: #E2E1E0;
+    border: 2px solid #E2E1E0;
+    transition: all .3s ease;
+    border-radius: 40px;
+}
+
+.slider-images ul.slick-dots li {
+    list-style: none;
+}
+
+.slider-images ul.slick-dots .slick-active button {
+    background: #000;
+    height: 8px;
+    width: 8px;
+    border-color: black;
+}
+
+
+/******* Slider  Section CSS End ********/
+
+
+/******* Make your Creative routine Section CSS Start ********/
+
+section.creative-routine {
+    padding: 50px 0px;
+}
+
+.more-info img {
+    width: 100%;
+    margin: 0px 0px 50px 0px;
+}
+
+.man-icon-img img {
+    width: 150px;
+}
+
+.creative-box h4 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.2em;
+    color: #25292C;
+    padding: 20px 0px;
+}
+
+.creative-box {
+    padding: 50px 0px 0px 0px;
+}
+
+.categories-image h2 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 45px;
+    letter-spacing: 1.9px;
+    text-align: center;
+    font-weight: 600;
+    color: #25292C;
+    padding: 0px 0px 20px 0px;
+}
+
+.categories-image {
+    padding: 50px 0px;
+}
+
+.category-img img {
+    width: 100%;
+    transform: translate(0px, 0px);
+    transition: all .3s ease;
+}
+
+.category-img {
+    text-align: center;
+    padding: 0px 0px 10px 0px;
+}
+
+.category-img h4 {
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+.category-img img:hover {
+    transform: translate(0px, -10px);
+}
+
+.service-end p {
+    font-size: 20px;
+    line-height: 1.6em;
+    font-weight: 300;
+    padding: 30px 0px 20px 0px;
+}
+
+.service-end {
+    text-align: center;
+}
+
+
+/******* Make your Creative routine Section CSS End ********/
+
+
+/****** Content Title Section CSS Start ******/
+
+.content-title-txt {
+    background: #F1582C;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 40px 40px 40px 40px;
+}
+
+.content-title-txt img {
+    width: 150px;
+    padding: 10px 0px;
+}
+
+.content-title-txt h6 {
+    font-size: 18px;
+    font-family: 'Montserrat';
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+
+.content-btn a {
+    color: #FFFFFF;
+    font-size: 31px;
+    font-weight: 600;
+    line-height: 1.4em;
+    font-family: "Montserrat", Sans-serif;
+    margin: 0px 0px 10px 0px;
+    text-decoration-line: none;
+}
+
+.content-btn {
+    padding: 20px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.theme-light {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    line-height: 1em !important;
+    padding: 15px 10px 15px 10px;
+    background: #25292C;
+}
+
+.content-title {
+    padding: 40px 0px;
+}
+
+.content-design {
+    width: 100%;
+    height: 300px;
+    background: #25292C;
+    margin: 20px 0px 0px 0px;
+}
+
+.content-title-2 {
+    background: url(../images/content-title-2.jpg);
+    height: 720px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: 72%;
+    display: flex;
+    align-items: end;
+    text-align: center;
+    padding: 20px 20px 60px 20px;
+    position: relative;
+}
+
+.content-title-2 p {
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+}
+
+section.content-title .container {
+    max-width: 1220px;
+}
+
+.content-title-2::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(354.75deg, rgb(0 0 0 / 64%) 5.14%, rgb(0 0 0 / 15%) 44.58%, rgba(0, 0, 0, 0) 80.87%);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+    transition: all 0.6s ease 0s;
+}
+
+.content-img {
+    background: url(../images/content-img.jpg);
+    height: 720px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: center;
+    display: flex;
+    align-items: end;
+    text-align: center;
+    padding: 20px 20px 100px 20px;
+    position: relative;
+}
+
+.content-img::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(354.75deg, rgb(0 0 0 / 64%) 5.14%, rgb(0 0 0 / 15%) 44.58%, rgba(0, 0, 0, 0) 80.87%);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+    transition: all 0.6s ease 0s;
+}
+
+.content-img p {
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+}
+
+
+/****** Content Title Section CSS End******/
+
+
+/******* Pet Accessories Section CSS Start ******/
+
+.pet-background {
+    background: url(../images/pet-background.jpg);
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #F5F6F7;
+    width: 100%;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: end;
+    margin: 50px 0px 100px 0px;
+}
+
+.pet-background::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(354.75deg, rgb(0 0 0 / 95%) 5.14%, rgb(0 0 0 / 15%) 44.58%, rgba(0, 0, 0, 0) 80.87%);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+    transition: all 0.6s ease 0s;
+}
+
+.pet-txt {
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.15);
+    background: white;
+    padding: 40px 40px 40px 40px;
+    height: 180px;
+    position: relative;
+    margin-bottom: -40px;
+}
+
+.pet-txt h5 {
+    font-family: "Open Sans", Sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6em;
+}
+
+.pet-accessories {
+    padding: 0px 0px 70px 0px;
+    background: #F5F6F7;
+}
+
+
+/******* Pet Accessories Section CSS End ******/
+
+
+/*******  Contact Us Section CSS Start ******/
+
+.contact-map {
+    width: 100%;
+}
+
+.contact-us {
+    text-align: center;
+    padding: 120px 0px 0px 0px;
+}
+
+.contact-us h2 {
+    font-size: 40px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #25292C;
+    line-height: 1.2em;
+    padding: 0px 0px 20px 0px;
+}
+
+.contact-detail img {
+    width: 80px;
+    padding: 0px 0px 50px 0px;
+}
+
+.contact-detail h6 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.2em;
+    color: black;
+}
+
+.contact-detail h4 {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.6em;
+}
+
+.contact-detail {
+    padding: 30px 120px 30px 120px;
+    position: relative;
+}
+
+.contact-detail::before {
+    position: absolute;
+    content: "";
+    background: #0000001A;
+    height: 1px;
+    width: 65%;
+    left: 120px;
+    bottom: 0;
+}
+
+.contact-details img {
+    width: 80px;
+    padding: 0px 0px 50px 0px;
+}
+
+.contact-details h6 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.2em;
+    color: black;
+}
+
+.contact-details h4 {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.6em;
+}
+
+.contact-details {
+    padding: 30px 120px 30px 120px;
+}
+
+.contact-now {
+    padding: 0px 0px 80px 0px;
+}
+
+
+/*******  Contact Us Section CSS End ******/
+
+
+/*******  Footer Section CSS Start ******/
+
+.footer-logo {
+    padding: 60px 0px 0px 0px;
+}
+
+.footer-logo img {
+    width: 300px;
+}
+
+.footer-address h5 {
+    font-size: 18px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.footer-main {
+    background: #172234;
+    padding: 100px 0px 150px 0px;
+}
+
+.footer-address p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    font-family: 'Roboto';
+}
+
+.footer-phone h5 {
+    font-size: 18px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.footer-phone a {
+    color: #F56201;
+    font-size: 18px;
+}
+
+.footer-phone a:hover {
+    text-decoration-line: none;
+}
+
+.find-us-now h6 {
+    font-size: 18px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 0px 0px 10px 0px;
+}
+
+.find-us-now ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+}
+
+.find-us-now ul li {
+    list-style: none;
+}
+
+.find-us-now ul li a {
+    font-size: 24px;
+    background: black;
+    padding: 7px 9px 6px 9px;
+    color: white;
+    transition: all .3s ease;
+}
+
+.footer-up {
+    padding: 10px 0px 40px 0px;
+}
+
+.footer-nav {
+    padding: 50px 0px 0px 0px;
+}
+
+.footer-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0px 0px 10px 0px;
+}
+
+.footer-nav ul li {
+    list-style: none;
+}
+
+.footer-nav ul li a {
+    color: #FFFFFF80;
+    font-size: 18px;
+    font-family: 'Roboto';
+}
+
+.find-us-now ul li a:hover {
+    background: #CCA75B;
+}
+
+.footer-up {
+    padding: 30px 0px 30px 0px;
+    border-bottom: 1px solid #FFFFFF26;
+}
+
+.footer-nav ul li a:hover {
+    text-decoration-line: none;
+}
+
+.footer-copright p {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dmca-link {
+    padding: 30px 0px 0px 0px;
+}
+
+.footer-main .container {
+    max-width: 1170px;
+}
+
+
+/*******  Footer Section CSS End ******/
+
+
+/**********  About Us Page CSS Start **********/
+
+.inner-page-banner {
+    background: url(../images/inner-page-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    position: relative;
+    padding: 240px 0px 130px 0px;
+    height: 480px;
+}
+
+.inner-page-banner::before {
+    position: absolute;
+    content: "";
+    background: #25292C;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0.5;
+}
+
+.inner-page-txt {
+    text-align: center;
+}
+
+.inner-page-txt h1 {
+    font-size: 70px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2em;
+}
+
+.about-img img {
+    width: 100%;
+}
+
+.about-us {
+    padding: 120px 0px 50px 0px;
+}
+
+.about-txt h2 {
+    font-size: 40px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #000;
+    line-height: 1.2em;
+    position: relative;
+    padding: 0px 0px 50px 0px;
+    margin: 0;
+}
+
+.about-txt {
+    padding: 30px 0px 0px 30px;
+}
+
+.about-txt h2::before {
+    position: absolute;
+    content: "";
+    background: #CB0A14;
+    width: 120px;
+    height: 3px;
+    bottom: 25px;
+}
+
+.about-txt p {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 500;
+    color: #666666cf;
+    margin: 0;
+}
+
+.about-img-2 img {
+    width: 100%;
+    padding: 50px 0px 0px 30px;
+}
+
+.about-txt-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.about-txt-2 p {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 500;
+    color: #666666cf;
+    margin: 0;
+}
+
+.about-img-3 img {
+    width: 100%;
+    padding: 50px 0px 0px 30px;
+}
+
+.about-txt-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 30px 0px 0px 30px;
+}
+
+.about-txt-3 p {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 500;
+    color: #666666cf;
+    margin: 0;
+}
+
+
+/**********  About Us Page CSS End **********/
+
+
+/**********  Service Page CSS Start **********/
+
+.creative-display {
+    padding: 80px 0px 20px 0px;
+}
+
+section.creative-display h2 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.4em;
+    text-align: center;
+    color: #25292C;
+    padding: 0px 0px 40px 0px;
+}
+
+.creative-display h2 span {
+    color: #aebcb9;
+    position: relative;
+}
+
+.inventor-registeration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px 40px 40px;
+    gap: 20px;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.inventor-img img {
+    width: 80px;
+}
+
+.inventor-txt h6 {
+    font-size: 20px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    line-height: 1.2em;
+    color: #25292C;
+}
+
+.inventor-txt p {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 400;
+    color: #666666eb;
+    margin: 0;
+}
+
+.inventor-txt {
+    padding: 70px 0px 0px 0px;
+}
+
+.creative-display .container {
+    max-width: 1250px;
+}
+
+.register-btn {
+    padding: 30px 0px 0px 0px;
+    text-align: center;
+}
+
+.theme-red {
+    background: #CB0A14;
+    padding: 15px 25px 15px 25px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all .6s ease;
+}
+
+.theme-red:hover {
+    background: #25292C;
+    color: #fff;
+    text-decoration-line: none;
+}
+
+.inventor-registerations {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.register-btn h1 {
+    text-align: left;
+    padding: 80px 0px 0px 100px;
+    color: #25292C;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+.creative-display span::before {
+    position: absolute;
+    content: "";
+    background: url(../images/span-before.JPG);
+    height: 20px;
+    width: 160px;
+    bottom: 45px;
+    left: -10px;
+}
+
+.creative-display span::after {
+    position: absolute;
+    content: "";
+    background: url(../images/span-after.JPG);
+    height: 13px;
+    width: 150px;
+    top: 50px;
+    left: -10px;
+}
+
+
+/**********  Service Page CSS End **********/
+
+
+/**********  Blog Page CSS Start **********/
+
+.blog-img img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 230px;
+}
+
+.blog-section {
+    padding: 50px 0px;
+}
+
+.blog-cart {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
+    border-radius: 5px;
+    transition: all .6s ease;
+    margin: 20px 0px;
+}
+
+.blog-img span {
+    position: absolute;
+    top: 20px;
+    background: #69727d;
+    color: #fff;
+    font-size: 12px;
+    padding: 0.6em 1.2em;
+    line-height: 1;
+    font-weight: 400;
+    margin: 20px;
+    border-radius: 999px;
+    left: 10px;
+}
+
+.blog-txt {
+    padding: 25px;
+}
+
+.blog-txt h4 {
+    color: #F56201;
+    font-family: 'Montserrat';
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.4em;
+    padding: 0px 0px 10px 0px;
+}
+
+.blog-txt p {
+    line-height: 1.5em;
+    font-size: 14px;
+    color: #777;
+    font-family: 'Roboto';
+}
+
+.blog-txt a {
+    color: #F56201;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.blog-txt a:hover {
+    text-decoration-line: none;
+}
+
+.date-comment {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid #eaeaea;
+    padding: 16px 25px;
+}
+
+.date-comment p {
+    margin: 0;
+    color: #adadad;
+    line-height: 1.3em;
+    font-size: 13px;
+}
+
+.blog-cart:hover {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .15);
+}
+
+
+/**********  Blog Page CSS End **********/
+
+
+/**********  Shop Page CSS Start **********/
+
+.count-sorting p {
+    margin: 0;
+}
+
+.count-sorting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+}
+
+.shop-page-txt h1 {
+    font-size: 6rem;
+    font-weight: 800;
+    text-align: center;
+    color: #25292C;
+    font-family: 'Montserrat';
+}
+
+.Shop-page-banner {
+    padding: 150px 0px 50px 0px;
+}
+
+.count-sorting p {
+    font-size: 18px;
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+.count-sorting select {
+    font-size: 18px;
+}
+
+.shop-product img {
+    width: 100%;
+    border: 1px solid #f2f2f2;
+}
+
+.shop-product h2 {
+    font-size: 28px;
+    padding: 10px 0px 0px 5px;
+    color: #111;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+section.shop-section {
+    padding: 0px 0px 50px 0px;
+}
+
+.shop-product span {
+    padding: 0px 0px 0px 5px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.add-to-cart a {
+    background: #f26c41;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.0333em;
+    line-height: 1.25;
+    text-transform: uppercase;
+    padding: 13px 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.add-to-cart {
+    margin: 20px 0px 0px 0px;
+}
+
+.shop-product {
+    margin: 0px 0px 60px 0px;
+}
+
+.add-to-cart a:hover {
+    text-decoration-line: none;
+}
+
+.shop-product a:hover {
+    text-decoration-line: none;
+}
+
+
+/**********  Shop Page CSS Endt **********/
+
+
+/**********  product detail Page CSS Start **********/
+
+.product-img img {
+    width: 100%;
+}
+
+.product-detail {
+    padding: 130px 0px 70px 0px;
+}
+
+.product-detail-txt h1 {
+    font-family: 'Montserrat';
+    font-size: 66px;
+    font-weight: 600;
+    line-height: 1.4em;
+    color: #25292C;
+    padding: 0px 0px 20px 0px;
+}
+
+.product-detail-txt h5 {
+    font-size: 20px;
+    padding: 0px 0px 0px 10px;
+}
+
+.product-count-cart input {
+    height: 50px;
+    width: 70px;
+    padding: 20px 5px 20px 20px;
+    font-size: 25px;
+    display: flex;
+}
+
+.product-count-cart {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.count-cart {
+    padding: 20px 0px 0px 10px;
+}
+
+.count-cart p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.product-detail-txt {
+    padding: 100px 0px 0px 0px;
+}
+
+.un-cate {
+    padding: 20px 0px 0px 0px;
+}
+
+.un-cate p {
+    font-size: 14px;
+}
+
+.un-cate a {
+    color: #F56201;
+    text-decoration-line: underline;
+}
+
+.shipping-etc-btn {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0px 40px 0px;
+}
+
+.shipping-etc-btn a {
+    color: #000;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.reviews-txt h3 {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 30px;
+    color: #25292C;
+}
+
+.reviews-txt h5 {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.reviewsbox h5 {
+    text-align: center;
+    font-family: 'Montserrat';
+    color: #25292C;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.reviewsbox p {
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 18px;
+}
+
+.reviews-section {
+    padding: 0px 0px 70px 0px;
+}
+
+.review-rate select {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: 'Roboto';
+    border: 1px solid #dbdbdb;
+}
+
+.your-rating h6 {
+    font-size: 20px;
+    font-family: 'Montserrat';
+    color: #25292c;
+    padding: 20px 0px 20px 0px;
+}
+
+.ratio-input textarea {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    height: 140px;
+    border: 1px solid #dbdbdb;
+}
+
+.ratio-input {
+    padding: 0px 0px 20px 0px;
+}
+
+.ratio-input label {
+    font-size: 16px;
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+.ratio-input input {
+    display: block;
+    width: 100%;
+    padding: 15px 15px;
+    font-size: 16px;
+    border: 1px solid #dbdbdb;
+}
+
+.input-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-checkbox p {
+    font-family: 'Montserrat';
+    margin: 0;
+    font-size: 16px;
+    color: #25292c;
+    font-weight: 500;
+}
+
+.input-checkbox input {
+    height: 20px;
+    width: 20px;
+}
+
+.review-submit-btn {
+    padding: 30px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.vendor-txt h4 {
+    font-size: 35px;
+    font-family: 'Montserrat';
+    color: #25292c;
+    font-weight: 600;
+}
+
+.shipping-etc-btn a:hover {
+    text-decoration-line: none;
+}
+
+
+/**********  product detail Page CSS End **********/
+
+
+/**********  Contact Us Page CSS Start **********/
+
+.contact-detailes {
+    text-align: center;
+}
+
+.contact-detailes img {
+    width: 100px;
+    padding: 0px 0px 50px 0px;
+}
+
+.contact-detailes h6 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.2em;
+    color: black;
+}
+
+.contact-detailes h4 {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.6em;
+}
+
+.contact-us-map iframe {
+    width: 100%;
+    height: 600px;
+}
+
+.contact-us-map {
+    padding: 40px 0px 50px 0px;
+}
+
+
+/**********  Contact Us Page CSS End **********/
+
+
+/**********  My Account Page CSS Start **********/
+
+.my-account {
+    padding: 100px 0px 50px 0px;
+}
+
+.login-form h3 {
+    font-size: 35px;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    line-height: 1.4em;
+    color: #25292c;
+    padding: 0px 0px 20px 0px;
+}
+
+.input-login input {
+    display: block;
+    width: 100%;
+    padding: 20px 18px;
+    border: 1px solid #ddd;
+}
+
+.input-login {
+    margin: 0px 0px 20px 0px;
+}
+
+.register-form h3 {
+    font-size: 35px;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    line-height: 1.4em;
+    color: #25292c;
+    padding: 0px 0px 20px 0px;
+}
+
+.login-button {
+    padding: 40px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.lost-pass {
+    font-size: 20px;
+    font-family: 'Roboto';
+    color: #F56201;
+    text-decoration-line: underline;
+}
+
+.lost-pass:hover {
+    color: #F56201;
+}
+
+.input-login label {
+    font-size: 18px;
+    font-family: 'Roboto';
+}
+
+.privacy-para p {
+    padding: 10px 0px 10px 0px;
+    font-size: 18px;
+    font-family: 'Roboto';
+}
+
+.privacy-para a {
+    color: #F56201;
+    text-decoration-line: underline;
+}
+
+
+/**********  My Account Page CSS End **********/
+
+
+/**********  Shipping policy Page CSS Start **********/
+
+section.shipping-policy {
+    padding: 50px 0px;
+}
+
+.shipping-txt h3 {
+    text-align: center;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.4em;
+    color: #25292c;
+    padding: 0px 0px 15px 0px;
+}
+
+.shipping-txt p {
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Roboto';
+}
+
+.shipping-txt {
+    padding: 10px 0px 20px 0px;
+}
+
+.shipping-point {
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.shipping-point h6 {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0px 0px 15px 0px;
+}
+
+.shipping-point p {
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Roboto';
+}
+
+.head-txt h2 {
+    text-align: center;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.4em;
+    color: #25292c;
+    padding: 0px 0px 30px 0px;
+}
+
+
+/**********  Shipping policy Page CSS End **********/
+
+
+/**********  Product Page CSS Start **********/
+
+.positive-seller-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
+    margin: 20px 0px 10px 0px;
+    padding: 25px 20px;
+    background: white;
+    border-radius: 5px;
+}
+
+.positive-seller-box {}
+
+.seller-img img {
+    width: 80px;
+}
+
+.seller-txt h5 {
+    font-family: 'Montserrat';
+    font-size: 18px;
+    color: #25292c;
+    font-weight: 500;
+    margin: 0;
+    padding: 0px 0px 3px 0px;
+}
+
+.flagship {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.flagship img {
+    width: 100px;
+}
+
+.flagship p {
+    margin: 0;
+}
+
+.seller-txt h6 {
+    font-family: 'Montserrat';
+    font-size: 13px;
+    color: #25292c;
+    padding: 3px 0px 0px 0px;
+}
+
+.chat-now span {
+    font-size: 55px;
+    color: rgb(0, 62, 82);
+    line-height: 0;
+}
+
+.chat-now h6 {
+    font-size: 13px;
+    color: rgb(0, 62, 82);
+    font-weight: 400;
+    margin: 0;
+}
+
+.chat-now:hover {
+    background: rgb(230, 243, 246);
+    padding: 6px 15px;
+}
+
+.chat-now {
+    padding: 6px 15px;
+    transition: all .3s ease;
+}
+
+.sellerchat-follow {
+    display: flex;
+    align-items: center;
+}
+
+.follow span {
+    font-size: 55px;
+    color: rgb(245, 114, 36);
+    line-height: 0;
+}
+
+.follow h6 {
+    font-size: 13px;
+    color: rgb(245, 114, 36);
+    font-weight: 400;
+    margin: 0;
+}
+
+.follow:hover {
+    background: rgb(254, 240, 233);
+    padding: 6px 15px;
+}
+
+.follow {
+    padding: 6px 15px;
+    transition: all .3s ease;
+}
+
+
+/* tabs custom (place nav and tabs anywhere separately)
+----------------------------------------------------------*/
+
+.tabs-custom-nav li a {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1A1A1A;
+    padding: 10px;
+}
+
+.tabs-custom-nav li a.current {
+    border-radius: 10px;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 27px */
+    color: rgb(245, 114, 36);
+    padding: 10px 0px;
+    position: relative;
+    margin: 0px 10px;
+}
+
+.tabs-custom .tab-content-panel {
+    display: none;
+    overflow: hidden;
+    width: 100%;
+}
+
+.tabs-custom .tab-content-panel.selected {
+    display: block;
+}
+
+
+/* tabs generic (nav and tabs in main div)
+------------------------------------*/
+
+.tab-custom-nav li a {
+    color: black;
+}
+
+.tab-custom-nav li a.current {
+    color: #0076FB;
+}
+
+.tab-custom .tab-content-panel {
+    display: none;
+    overflow: hidden;
+    width: 100%;
+}
+
+.tab-custom .tab-content-panel.selected {
+    display: block;
+}
+
+
+/* tabs generic (nav and tabs in main div tabs with style)
+------------------------------------*/
+
+.tabs-main {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+}
+
+.tabs-main ul.tabs-nav {
+    padding: 0px;
+    width: 100%;
+    float: left;
+    margin: 0 0 -1px 0;
+}
+
+.tabs-main ul.tabs-nav li {
+    list-style: none;
+    float: left;
+}
+
+.tabs-main ul.tabs-nav li a {
+    background: #003a7b;
+    border: 1px solid #BCC5cB;
+    border-bottom: 0px;
+    color: white;
+    padding: 7px 15px;
+    display: block;
+    text-decoration: none;
+}
+
+.tabs-main ul.tabs-nav li a.current {
+    background: white;
+    color: #003a7b;
+}
+
+.tabs-main .tab-content-panel {
+    background: white;
+    padding: 15px 30px 25px 30px;
+    border: 1px solid #BCC5cB;
+    display: none;
+    overflow: hidden;
+    width: 100%;
+}
+
+ul.tabs-custom-nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 10px;
+}
+
+.tab-txt h4 {
+    font-family: 'Poppins' !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 22px !important;
+    /* or 33px */
+    color: #333333;
+    text-align: left !important;
+    line-height: 1.5 !important;
+    padding: 35px 0px 10px 0px !important;
+}
+
+.tabs-custom.general {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
+    padding: 20px;
+    margin: 10px 0px 30px 0px;
+}
+
+.product-profiletab ul li {
+    list-style: none;
+}
+
+.tab-searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
+    padding: 7px 5px 7px 10px;
+}
+
+.tabs-custom-nav li a:hover {
+    text-decoration-line: none;
+}
+
+.tabs-custom-nav li a.current::before {
+    position: absolute;
+    content: "";
+    background: rgb(245, 114, 36);
+    bottom: -5px;
+    height: 3px;
+    width: 100%;
+    left: 0;
+}
+
+.search-bar input {
+    border: 1px solid rgb(218, 218, 218);
+    width: 250px;
+    height: 40px;
+    line-height: 36px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 0px 0px;
+    border-radius: 3px;
+    padding: 10px 15px;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-bar span {
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    font-size: 20px;
+    color: #666;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.product-img img {
+    width: 100%;
+}
+
+.product-slider .slick-prev {
+    position: absolute;
+    content: "\f053";
+    z-index: 9;
+    left: 30px;
+    top: 80px;
+    border: none;
+    background: transparent;
+    color: transparent;
+}
+
+.product-slider .slick-prev::before {
+    position: absolute;
+    content: "\f053";
+    background: transparent;
+    font-family: 'FontAwesome';
+    color: white;
+    font-size: 30px;
+}
+
+.product-slider .slick-prev:focus {
+    outline: none;
+}
+
+.product-slider .slick-next {
+    position: absolute;
+    content: "\f053";
+    z-index: 9;
+    right: 30px;
+    top: 80px;
+    border: none;
+    background: transparent;
+    color: transparent;
+}
+
+.product-slider .slick-next::before {
+    position: absolute;
+    content: "\f054";
+    background: transparent;
+    font-family: 'FontAwesome';
+    color: white;
+    font-size: 30px;
+}
+
+.product-slider .slick-next:focus {
+    outline: none;
+}
+
+.pro-img img {
+    width: 100%;
+    margin: 22px 0px 0px 0px;
+}
+
+.product-category h6 {
+    font-size: 20px;
+    font-family: 'Montserrat';
+    color: #25292c;
+    padding: 0px 0px 10px 0px;
+    font-weight: 600;
+}
+
+.product-category p {
+    margin: 0;
+    padding: 0px 0px 3px 0px;
+    font-family: 'Roboto';
+    font-size: 16px;
+}
+
+.brand-check h6 {
+    font-family: 'Montserrat';
+    color: #25292c;
+    font-weight: 600;
+    padding: 0px 0px 10px 0px;
+}
+
+.brand-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0px 0px 5px 0px;
+}
+
+.brand-checkbox p {
+    margin: 0;
+}
+
+.brand-check {
+    padding: 15px 0px;
+    border-bottom: 1px solid #ececec;
+}
+
+.pro-price {
+    display: flex;
+}
+
+.pro-price input {
+    padding: 5px 10px;
+    margin: 10px 10px 0px 0px;
+    width: 90px;
+    border: 1px solid #a8a8a8;
+    box-shadow: 0 1px 1px 0 #ececec;
+    color: #404040;
+    border-radius: 3px;
+}
+
+.pro-price a {
+    background: #108ee9;
+    padding: 10px 15px;
+    color: white;
+    margin: 10px 0px 0px 0px;
+    border-radius: 3px;
+    transition: all .3s ease;
+}
+
+.pro-price a:hover {
+    background: #49a9ee;
+}
+
+.product-price h6 {
+    font-family: 'Montserrat';
+    color: #25292c;
+    font-weight: 600;
+}
+
+.product-price {
+    padding: 15px 0px 15px 0px;
+    border-bottom: 1px solid #ececec;
+}
+
+.product-rating {
+    padding: 15px 0px;
+    border-bottom: 1px solid #ececec;
+}
+
+.product-rating h6 {
+    font-family: 'Montserrat';
+    color: #25292c;
+    font-weight: 600;
+}
+
+.product-rating ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.product-rating ul li {
+    list-style: none;
+    color: #faca51;
+    font-size: 18px;
+}
+
+li.no-color {
+    color: #80808047 !important;
+}
+
+li.and-color {
+    color: gray !important;
+    font-size: 16px !important;
+}
+
+.sort-best {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sort-best h6 {
+    font-size: 14px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    margin: 0;
+}
+
+.sort-best select {
+    background: #fff;
+    border: 1px solid #9b9b9b;
+    border-radius: 3px;
+    box-shadow: 0 3px 0 0 #fafafa;
+    padding: 6px 8px;
+    height: 35px;
+    width: 180px;
+}
+
+.view-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-icon p {
+    margin: 0;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 14px;
+    color: #183545;
+}
+
+.view-icon button {
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: #183545;
+}
+
+.view-icon button:focus {
+    outline: none;
+}
+
+.product-img img {
+    width: 100%;
+}
+
+.product-text h4 {
+    font-size: 12px;
+    color: #108ee9;
+    cursor: pointer;
+    margin: 0;
+    padding: 5px 0px;
+}
+
+.product-text img {
+    width: 40px;
+}
+
+.product-text h6 {
+    margin: 0;
+    color: #f57224;
+    font-size: 20px;
+}
+
+.cut-price {
+    display: flex;
+    gap: 5px;
+}
+
+.cut-price p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.product-star ul {
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+
+.product-star ul li {
+    color: #faca51;
+}
+
+li.rate {
+    color: gray !important;
+}
+
+.product-star {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 2px 0px 0px;
+}
+
+.product-star p {
+    margin: 0;
+    font-size: 12px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+
+.product-cart:hover {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .3);
+}
+
+.product-cart {
+    background: white;
+    transition: all .3s ease;
+    padding: 10px;
+    margin: 10px 3px 10px 3px;
+}
+
+.positive-seller .container {
+    max-width: 1250px;
+}
+
+.product-category {
+    padding: 20px 0px 0px 0px;
+}
+
+.sort-bestmatch {
+    padding: 10px 0px 10px 0px;
+}
+
+.snipping {
+    background: rgb(248, 249, 251);
+    padding: 20px;
+}
+
+.snipping-snap h4 {
+    color: #25292c;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.snipping-txt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0px;
+}
+
+.snipping-txt h3 {
+    font-size: 38px;
+    color: rgb(76, 175, 80);
+    margin: 0;
+}
+
+.snipping-txt {
+    padding: 20px 0px;
+}
+
+.snipping-txt p {
+    font-size: 14px;
+    line-height: 16px;
+    color: rgb(32, 32, 32);
+    margin: 0;
+}
+
+.chat h5 {
+    color: rgb(66, 66, 66);
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    padding: 0px 0px 12px 0px;
+}
+
+.chat-response p {
+    margin: 0;
+    color: rgb(66, 66, 66);
+    font-size: 12px;
+}
+
+.chat-response {
+    padding: 0px 0px 5px 0px;
+}
+
+.chat-response span {
+    color: rgb(76, 175, 80);
+    font-size: 12px;
+}
+
+.snipping-snap {
+    border-right: 2px solid rgb(239, 240, 245);
+}
+
+.positive-seller-rating h5 {
+    padding: 40px 0px 0px 0px;
+    font-size: 16px;
+    color: #212121;
+    font-weight: 500;
+    letter-spacing: 0;
+    font-family: 'Roboto';
+    margin-bottom: 10px;
+}
+
+.positive-seller-rating h2 {
+    font-size: 48px;
+    color: #212121;
+    margin-bottom: 9px;
+}
+
+.positive-seller-rating span {
+    font-size: 14px;
+    line-height: 1.28571;
+}
+
+.progress-bar.progress-bar-warning {
+    background: #faca51;
+}
+
+.progress-txt h6 {
+    padding: 0px 0px 0px 15px;
+    margin: 0;
+    font-size: 17px;
+    color: #212121;
+    font-weight: 400;
+}
+
+.progress-txt h5 {
+    margin: 0;
+}
+
+.progress-bar {
+    padding: 4px 0px;
+    background: transparent;
+}
+
+.progress-content {
+    padding: 10px 0px 10px 0px;
+}
+
+.positive-seller-rating {
+    padding: 0px 0px 20px 0px;
+}
+
+.progress-content p {
+    padding: 10px 0px 0px 0px;
+    margin: 0;
+    font-weight: 400;
+    font-family: 'Roboto';
+}
+
+.seller-rating {
+    padding: 40px 0px 0px 0px;
+}
+
+.seller-rating h4 {
+    font-size: 16px;
+    color: #212121;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin-bottom: 13px;
+}
+
+.seller-rating ul {
+    display: flex;
+    gap: 20px;
+}
+
+.seller-rating ul li img {
+    width: 40px;
+}
+
+.happy-emoji {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.happy-emoji img {
+    width: 25px;
+}
+
+.happy-emoji p {
+    margin: 0;
+    color: #29252c;
+}
+
+.awais-q {
+    padding: 10px 0px 0px 0px;
+    display: flex;
+}
+
+.awais-q p {
+    margin: 0;
+    font-size: 12px;
+    color: #80808080;
+    font-family: 'Roboto';
+}
+
+.very-txt {
+    display: flex;
+    padding: 0px 0px 0px 10px;
+    align-items: center;
+    gap: 5px;
+}
+
+.very-txt img {
+    width: 16px;
+}
+
+.very-txt h6 {
+    margin: 0;
+    font-size: 12px !important;
+    font-weight: 300 !important;
+    color: #4caf50 !important;
+    padding: 0 !important;
+}
+
+.like span {
+    color: #80808075;
+    font-size: 16px;
+}
+
+.positive-think {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0px 30px 0px;
+}
+
+.postive-detail span {
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 15px;
+    text-decoration: none;
+    background: #8080801f;
+    margin: 2px;
+    border-radius: 4px;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.next-page {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0px 0px 30px 0px;
+}
+
+.product-rating-reviews {
+    padding: 30px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #d9d9d9ba;
+}
+
+.sort-relevence {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-rel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sort-rel p {
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+.sort-rel h6 {
+    margin: 0;
+    font-size: 14px;
+    color: #29252c;
+    font-weight: 400;
+}
+
+.sort-rel span {
+    font-size: 17px;
+    color: #808080;
+    font-weight: 300;
+}
+
+.product-ratings h3 {
+    height: 44px;
+    line-height: 44px;
+    font-size: 20px;
+    color: #212121;
+    font-weight: 400;
+}
+
+.pf-pg-proimg img {
+    width: 50px;
+}
+
+.profile-page-product {
+    display: flex;
+    gap: 10px;
+}
+
+.pf-txt a {
+    cursor: pointer;
+    color: #212121;
+    font-size: 14px;
+}
+
+.pf-txt {
+    display: flex;
+    flex-direction: column;
+}
+
+.pf-txt span {
+    font-size: 12px;
+    padding: 0px 0px 10px 0px;
+}
+
+.pf-txt ul {
+    display: flex;
+    gap: 6px;
+    margin: 0px 0px 6px 0px;
+}
+
+.pf-txt ul li {
+    color: #faca51;
+    font-size: 16px;
+}
+
+.pf-txt h6 {
+    font-weight: 400;
+    font-size: 14px;
+    color: black;
+    padding: 0px 0px 5px 0px;
+}
+
+.image-flex ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.image-flex ul li img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.pf-txt a:hover {
+    text-decoration-line: none;
+}
+
+.just-for-txt h4 {
+    padding: 50px 0px 0px 0px;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    font-weight: 600;
+}
+
+
+/**********  Product Page CSS End **********/
+
+
+/********** Responsive **********/
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (max-width: 1200px) {}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 991px) {}
+
+@media only screen and (max-width: 767px) {}
